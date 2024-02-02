@@ -1,11 +1,15 @@
-import { useState } from "react";
+// src/App.js
+import React from "react";
 import "./App.css";
+import TiptapEditor from "./components/tiptap/TiptapEditor.jsx";
 
 function App() {
   return (
-    <>
-      <h1>Hello World!</h1>
-    </>
+    <div className="App">
+      <header className="App-header">
+        <TiptapEditor />
+      </header>
+    </div>
   );
 }
 
