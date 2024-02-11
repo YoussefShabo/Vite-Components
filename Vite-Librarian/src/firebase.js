@@ -1,8 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
+import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -11,7 +10,7 @@ const firebaseConfig = {
   projectId: "vite-react-librarian-6fbd2",
   storageBucket: "vite-react-librarian-6fbd2.appspot.com",
   messagingSenderId: "107178477815",
-  appId: "1:107178477815:web:7f334be08a101cc18cabf2"
+  appId: "1:107178477815:web:7f334be08a101cc18cabf2",
 };
 
 // Initialize Firebase
@@ -19,5 +18,8 @@ const app = initializeApp(firebaseConfig);
 
 // Initialize Firestore
 const db = getFirestore(app);
+
+// Initialize Firebase Authentication and get a reference to the service
+export const auth = getAuth(app);
 
 export default db;

@@ -1,0 +1,13 @@
+.settings-container {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .settings-container input,
+  .settings-container button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  

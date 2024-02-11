@@ -1,0 +1,11 @@
+/* SignUp.css */
+.success-message {
+    color: green;
+    margin-top: 20px;
+  }
+  
+  .error-message {
+    color: red;
+    margin-top: 20px;
+  }
+  
