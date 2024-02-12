@@ -90,4 +90,8 @@ body, html {
     margin: 0;
     flex: 1;
   }
+  .error-message {
+    color: red; /* Or any color that indicates an error */
+    margin: 10px 0; /* Adjust spacing as needed */
+  }
   

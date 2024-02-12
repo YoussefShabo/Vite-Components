@@ -4,7 +4,7 @@ import Login from './components/pages/Login';
 import About from './components/pages/About';
 import Contact from './components/pages/Contact';
 import SignUp from './components/Auth/Signup';
-import Settings from './components/pages/Settings';
+import Settings from './components/Auth/Settings';
 import ErrorPage from './components/pages/ErrorPage'; 
 
 function App() {

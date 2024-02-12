@@ -11,6 +11,8 @@ function Login() {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
 
   const signIn = (e) => {
     e.preventDefault();
@@ -18,9 +20,11 @@ function Login() {
       .then((userCredential) => {
         console.log(userCredential);
         navigate("/home");
+        setError("");
       })
       .catch((error) => {
         console.log(error);
+        setError("Login failed: " + error.message);
       });
   };
 
@@ -46,6 +50,7 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}/>
           </label>
+         
         <button className="red" type="submit">
           Log in
         </button>
@@ -53,6 +58,7 @@ function Login() {
           Don't have an account? <Link to="/signup">Sign up here</Link>
         </p>
       </form>
+      {error && <div className="error-message">{error}</div>}
     </div>
   );
 }
