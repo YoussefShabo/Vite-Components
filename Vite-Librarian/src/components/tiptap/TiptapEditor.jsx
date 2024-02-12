@@ -37,11 +37,7 @@ const TiptapEditor = () => {
   );
 
   const editor = useEditor({
-    extensions: [
-      StarterKit,
-      TextStyle,
-      // Add more extensions here
-    ],
+    extensions: [StarterKit, TextStyle],
     content: "<h1>Hello World! 🌎</h1>",
     onUpdate: ({ editor }) => {
       const content = editor.getHTML();
@@ -50,7 +46,6 @@ const TiptapEditor = () => {
   });
   console.log("Initial Editor Content:", "<h1>Hello World! 🌎</h1>");
 
-  // Cleanup on component unmount
   useEffect(() => {
     const loadContent = async () => {
       try {
