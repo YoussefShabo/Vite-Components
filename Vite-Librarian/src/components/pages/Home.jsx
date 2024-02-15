@@ -4,7 +4,7 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import SettingsIcon from '@mui/icons-material/Settings';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from 'react-router-dom';
-
+import FlexmonsterTable from '../Flexmonster/Flexmonster';
 function Home() {
   const navigate = useNavigate();
 
@@ -15,6 +15,8 @@ function Home() {
     <div>
       <h1>Home</h1>
       <p>Here's your Home Page</p>
+      <FlexmonsterTable
+/>
       <div className="segment">
           <button className="unit" type="button">
             <ArrowBackIosNewIcon />
