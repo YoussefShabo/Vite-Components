@@ -4,7 +4,7 @@ import StarterKit from "@tiptap/starter-kit";
 import React, { useEffect, useCallback } from "react";
 import TextStyle from "@tiptap/extension-text-style";
 import db from "../../firebase";
-import { collection, addDoc, doc, getDoc } from "firebase/firestore";
+import { collection, addDoc, doc, getDoc, setDoc } from "firebase/firestore";
 
 function debounce(func, wait) {
   let timeout;
@@ -23,13 +23,15 @@ function debounce(func, wait) {
 const TiptapEditor = () => {
   const saveContent = async (content) => {
     try {
-      await addDoc(collection(db, "documents"), { content });
-      console.log("Document auto-saved");
+      // Reference the "Test" document in the "documents" collection
+      const docRef = doc(db, "documents", "Test");
+      // Update the "Test" document with the new content, or create it if it doesn't exist
+      await setDoc(docRef, { content });
+      console.log("Document content updated in Firestore");
     } catch (error) {
-      console.error("Error saving document: ", error);
+      console.error("Error updating document: ", error);
     }
   };
-
   // Debounce function setup
   const debouncedSave = useCallback(
     debounce((content) => saveContent(content), 5000),
@@ -49,7 +51,7 @@ const TiptapEditor = () => {
   useEffect(() => {
     const loadContent = async () => {
       try {
-        const docRef = doc(db, "documents", "ERMvGTY9LeMQ8VMj0Pfe");
+        const docRef = doc(db, "documents", "Test");
         const docSnap = await getDoc(docRef);
 
         if (docSnap.exists()) {
