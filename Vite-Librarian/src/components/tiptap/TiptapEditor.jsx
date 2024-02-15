@@ -4,7 +4,14 @@ import StarterKit from "@tiptap/starter-kit";
 import React, { useEffect, useCallback } from "react";
 import TextStyle from "@tiptap/extension-text-style";
 import db from "../../firebase";
-import { collection, addDoc, doc, getDoc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  addDoc,
+  doc,
+  getDoc,
+  setDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 function debounce(func, wait) {
   let timeout;
@@ -26,7 +33,7 @@ const TiptapEditor = () => {
       // Reference the "Test" document in the "documents" collection
       const docRef = doc(db, "documents", "Test");
       // Update the "Test" document with the new content, or create it if it doesn't exist
-      await setDoc(docRef, { content });
+      await updateDoc(docRef, { content });
       console.log("Document content updated in Firestore");
     } catch (error) {
       console.error("Error updating document: ", error);
