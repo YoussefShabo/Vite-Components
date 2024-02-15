@@ -1,12 +1,10 @@
 import React from "react";
-import "./Home.css";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import SettingsIcon from "@mui/icons-material/Settings";
 import SearchIcon from "@mui/icons-material/Search";
 import { useNavigate } from "react-router-dom";
-import TiptapEditor from "../tiptap/TiptapEditor";
-
+import FlexmonsterTable from "../Flexmonster/Flexmonster";
 function Home() {
   const navigate = useNavigate();
 
@@ -17,9 +15,7 @@ function Home() {
     <div>
       <h1>Home</h1>
       <p>Here's your Home Page</p>
-      <div className="tiptap">
-        <TiptapEditor />
-      </div>
+      <FlexmonsterTable />
       <div className="segment">
         <button className="unit" type="button">
           <ArrowBackIosNewIcon />
